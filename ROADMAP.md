@@ -3,7 +3,7 @@
 > Learn → Code → Sketchnote → Ship. Every topic gets: working code in this repo, a short `notes.md`, and (for the ★ topics) a sketchnote post.
 > Complexity escalates inside each phase; each phase ends with a **milestone project** that gets deployed, not just committed.
 
-**Format per topic folder:** `code/` (script or notebook) · `notes.md` (what I learned, in my own words) · `sketchnote/` (prompt + final image, if ★)
+**Format per topic folder:** `code/lesson.ipynb` (worked examples, run every cell) + `code/drills.ipynb` (exercises with self-checks — make them all pass) · `notes.md` (what I learned, in my own words) · `sketchnote/` (prompt + final image, if ★)
 
 ---
 

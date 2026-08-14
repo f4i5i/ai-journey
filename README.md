@@ -22,7 +22,16 @@ My public journey from software engineer to AI Architect — learning every doma
 
 ```
 <phase>/<nn-topic>/
-  code/        # the working code
-  notes.md     # what I learned, in my own words
-  sketchnote/  # image prompt + final post (★ topics)
+  code/lesson.ipynb   # worked examples — run every cell
+  code/drills.ipynb   # exercises with self-checks — make them all pass
+  notes.md            # what I learned, in my own words
+  sketchnote/         # image prompt + final post (★ topics)
+```
+
+## Setup
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/jupyter notebook   # or open the .ipynb files in VS Code
 ```
