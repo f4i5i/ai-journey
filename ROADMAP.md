@@ -41,6 +41,7 @@
 | 1.13 | Hyperparameter tuning: grid, random, Optuna | tune the milestone model | |
 | 1.14 | Unsupervised: k-means, DBSCAN, hierarchical | cluster customers, interpret clusters | ★ |
 | 1.15 | Dimensionality reduction: PCA, t-SNE/UMAP | visualize high-dim data in 2D | |
+| 1.16 | **Error analysis & model debugging**: slice-based analysis, leakage detection, "why is my model wrong?" | take a mediocre model, find the 3 worst slices, fix the biggest one | ★ "Debug the data, not the model" |
 
 **Milestone 1 (small):** Titanic/housing baseline — full pipeline, honest evaluation.
 **Milestone 1 (real):** **Churn prediction service** — messy dataset, feature pipeline, XGBoost, FastAPI endpoint, Docker, deployed, with an ADR (why these choices).
@@ -62,6 +63,7 @@
 | 2.9 | RNN / LSTM / GRU | character-level text generator | |
 | 2.10 | Attention & the Transformer | implement single-head attention; read "Attention Is All You Need" | ★ "The transformer, drawn" |
 | 2.11 | Experiment tracking: MLflow or W&B | instrument the training loop | |
+| 2.12 | **Debugging neural nets**: loss-curve reading, overfit-one-batch test, gradient checks, LR sweeps | break a training run 5 ways, diagnose each from the curves alone | ★ "Read the loss curve like a doctor" |
 
 **Milestone 2:** Image classifier on a self-collected dataset (photos you take/scrape), fine-tuned, tracked experiments, deployed behind an API with a simple UI.
 
@@ -126,6 +128,29 @@
 **Milestone 6 (capstone):** One end-to-end platform combining pieces: e.g. churn model + recommender + LLM explanation layer, monitored, documented with ADRs.
 
 > GenAI/LLM theory track (RAG, agents) is covered by the content series — this repo holds its CODE: the RAG pipeline with evals (series finale link) and the agent + MCP builds.
+
+---
+
+## Phase 7 — LLM Engineering: Evaluation, Fine-tuning, Optimization (Week 33–40)
+
+> The differentiator phase. Anyone can call an LLM API — this is the "one step ahead of just building" layer: measure it, tune it, make it cheaper and faster, debug it, attack it.
+
+| # | Topic | Code exercise | ★ |
+|---|-------|---------------|---|
+| 7.1 | LLM evaluation fundamentals: benchmarks vs YOUR task, building a golden eval set | hand-build a 50-case eval set for one real task | ★ "Benchmarks lie about your use case" |
+| 7.2 | Eval harnesses & LLM-as-judge: pairwise vs rubric scoring, judge bias, human agreement check | build a reusable eval harness; measure judge-vs-human agreement | ★ |
+| 7.3 | Prompt engineering as ENGINEERING: versioned prompts, regression tests, A/B prompts | put prompts under test — a prompt change must pass evals before merge | ★ "Prompts are code" |
+| 7.4 | Structured outputs & guardrails: JSON schemas, validators, retry-on-invalid | constrained-output pipeline with failure handling | |
+| 7.5 | Fine-tuning 1: dataset curation + SFT with LoRA/QLoRA | fine-tune a small open model on a custom dataset | ★ "Fine-tuning on one GPU" |
+| 7.6 | Fine-tuning 2: preference tuning (DPO) + the decision framework — fine-tune vs prompt vs RAG | DPO pass on 7.5's model; write the decision ADR | ★ |
+| 7.7 | Quantization & distillation: GGUF/AWQ, quality-vs-size curves, teacher→student | quantize 7.5's model at 3 levels, plot quality vs size vs speed | ★ "Shrink the model, keep the brain" |
+| 7.8 | Token & cost optimization: prompt compression, context budgeting, semantic caching, model routing | cut a real pipeline's cost 5-10x, before/after dashboard | ★ "Same quality, 1/10th the bill" |
+| 7.9 | Inference internals: KV cache, continuous batching, speculative decoding | benchmark vLLM vs naive serving, explain WHY it wins | ★ |
+| 7.10 | LLM observability: tracing, token/latency/cost per request (Langfuse or OTel) | instrument an LLM app end-to-end | |
+| 7.11 | Debugging LLM apps: failure taxonomy, error analysis loop, retrieval-vs-generation diagnosis | take a failing RAG app, classify 50 failures, fix the top class, re-eval | ★ "Debug LLM apps like a scientist" |
+| 7.12 | LLM security testing: prompt-injection red-teaming, jailbreak evals, output filtering | red-team your own app with an attack suite; fix what breaks | ★ |
+
+**Milestone 7 (the standout):** **Fine-tune → prove → ship.** Fine-tune a small model on a custom dataset, *beat the base model on your own eval harness*, quantize it, serve it with vLLM, and publish the full writeup: eval numbers, cost-per-1k-requests vs the API model, and the ADR. This single project demonstrates evaluation + fine-tuning + optimization + serving in one artifact.
 
 ---
 

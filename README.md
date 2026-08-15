@@ -2,7 +2,7 @@
 
 My public journey from software engineer to AI Architect — learning every domain of AI by **coding it, explaining it, and shipping it**.
 
-- 📍 **Roadmap:** [ROADMAP.md](ROADMAP.md) — 6 phases: Foundations → Classical ML → Deep Learning → Computer Vision → NLP → Specialized → MLOps
+- 📍 **Roadmap:** [ROADMAP.md](ROADMAP.md) — 7 phases: Foundations → Classical ML → Deep Learning → Computer Vision → NLP → Specialized → MLOps → LLM Engineering (evals, fine-tuning, optimization)
 - ✍️ **Sketchnotes:** every ★ topic becomes a hand-drawn-style infographic → [@f4i5i](https://twitter.com/f4i5i)
 - 🧠 **Rule:** from scratch first, library second. Deployed or it didn't happen.
 
@@ -17,6 +17,7 @@ My public journey from software engineer to AI Architect — learning every doma
 | 4 — NLP | ⬜ |
 | 5 — Time-series / RecSys / Speech | ⬜ |
 | 6 — MLOps & Production | ⬜ |
+| 7 — LLM Engineering (evals, fine-tuning, optimization) | ⬜ |
 
 ## Structure
 
