@@ -162,3 +162,4 @@
 4. **Every milestone gets deployed** — a URL or it didn't happen.
 5. **Every milestone gets an ADR** — what I chose, what I rejected, why.
 6. **From scratch first, library second** — implement the core idea in NumPy once, then use the real tool forever.
+7. **Every library call gets explained** — any lesson line that uses a library method (`np.mean`, `train_test_split`, `nn.Module`, …) carries a short inline comment saying what that method does and why it's used here. If a line can't be explained in one comment, it doesn't go in the lesson.
