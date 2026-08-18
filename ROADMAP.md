@@ -163,3 +163,4 @@
 5. **Every milestone gets an ADR** — what I chose, what I rejected, why.
 6. **From scratch first, library second** — implement the core idea in NumPy once, then use the real tool forever.
 7. **Every library call gets explained** — any lesson line that uses a library method (`np.mean`, `train_test_split`, `nn.Module`, …) carries a short inline comment saying what that method does and why it's used here. If a line can't be explained in one comment, it doesn't go in the lesson.
+8. **Drills only test what the lesson taught** — every drill must map back to a lesson section; if a drill needs a method or technique the lesson didn't show, the lesson gets a section for it FIRST. Drills recombine taught pieces; they never introduce new ones.
